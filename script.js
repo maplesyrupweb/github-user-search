@@ -9,6 +9,10 @@ let reposText = document.getElementById("repos");
 let followersText = document.getElementById("followers");
 let followingText = document.getElementById("following");
 let joinedText = document.getElementById("joined");
+let locationText = document.getElementById("location");
+let bioText =  document.getElementById("bio");
+let blogText = document.getElementById("blog");
+let loginText = document.getElementById("login");
 
 //created_at: "2020-11-02T03:55:55Z"
 /**
@@ -28,6 +32,7 @@ let joinedText = document.getElementById("joined");
     }
     
 } )
+
 
 
 
@@ -55,7 +60,18 @@ async function checkUserName(input) {
         let name = result.name;
         console.log("Name: " + name);
 
+        let login = result.login;
+        console.log("Login: " + login);
+
+        let blog = result.blog;
+        console.log("Blog: " + blog);
+
         let location = result.location;
+        // let boolean = result.location === null
+        // console.log("Location boolean " + result.location === "null")
+        if (result.location === null) {
+            location = "N/A";
+        }
         console.log("Location: " + location);
 
         let website = result.website;
@@ -70,16 +86,20 @@ async function checkUserName(input) {
         let year = joinedDate.getFullYear();
         // let month = joinedDate.getMonth();
 
+        
         let month = new Date(joinedDate); // yyyy-mm-dd
 
         let monthText = month.toLocaleString('default', { month: 'long' });
 
+        let dateText = day + " " + monthText + " " + year;
         
         console.log("Joined date " + joinedDate);
-        console.log("Joined: " + day + " " + monthText + " " + year);
+        console.log("Joined: " + dateText);
         
-        populateData(name,repos,followers,following);
+        let bio = result.bio;
+        console.log("Bio: " + bio);
 
+        populateData(name,repos,followers,following,dateText,location,blog,bio,login);
         
     }
 
@@ -111,12 +131,17 @@ function checkName() {
  * Get data from API and output to screen
  * 
  */
-function populateData(name,repos,followers,following, joined) {
+function populateData(name,repos,followers,following,joined,location, blog,bio,login) {
 
+    
     nameText.innerHTML = name;
     reposText.innerHTML = repos;
     followersText.innerHTML = followers;
     followingText.innerHTML = following;
     joinedText.innerHTML = joined;
+    locationText.innerHTML = location;
+    blogText.innerHTML = blog;
+    bioText.innerHTML = bio;
+    loginText.innerHTML = login;
 
 }
