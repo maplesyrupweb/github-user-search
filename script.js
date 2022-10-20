@@ -4,7 +4,13 @@ const searchButton = document.getElementById("searchButton");
 let formInput = document.getElementById("search");
 let textField = document.getElementById('search');
 
+let nameText = document.getElementById("name");
+let reposText = document.getElementById("repos");
+let followersText = document.getElementById("followers");
+let followingText = document.getElementById("following");
+let joinedText = document.getElementById("joined");
 
+//created_at: "2020-11-02T03:55:55Z"
 /**
  *  Event listener for search button
  */
@@ -15,7 +21,7 @@ let textField = document.getElementById('search');
     if (input !== "") {
         console.log(input);
         checkName();
-        checkUserName(input);
+        checkUserName(input)
         
     }else {
         checkName();
@@ -57,14 +63,22 @@ async function checkUserName(input) {
 
         let twitter = result.twitter_username;
         console.log("Twitter:" + twitter)
+
+        let joined = result.created_at;
+        let joinedDate = new Date(joined);
+        let day = joinedDate.getDate();
+        let year = joinedDate.getFullYear();
+        // let month = joinedDate.getMonth();
+
+        let month = new Date(joinedDate); // yyyy-mm-dd
+
+        let monthText = month.toLocaleString('default', { month: 'long' });
+
         
-        // console.log("Result ID2:", id2);
-        // let advice2 = result2.slip.advice;
-        // console.log("Advice2:", advice2);
-        // console.log("id2: ", id2, "advice2: ", advice2);
-        // totalAdviceGiven++;
-        // populateData2(id2, advice2);
-        // console.log("Total advice2 " + totalAdviceGiven);
+        console.log("Joined date " + joinedDate);
+        console.log("Joined: " + day + " " + monthText + " " + year);
+        
+        populateData(name,repos,followers,following);
 
         
     }
@@ -93,11 +107,16 @@ function checkName() {
   }
 
 
+/**
+ * Get data from API and output to screen
+ * 
+ */
+function populateData(name,repos,followers,following, joined) {
 
-function populateData2(id2,advice2) {
+    nameText.innerHTML = name;
+    reposText.innerHTML = repos;
+    followersText.innerHTML = followers;
+    followingText.innerHTML = following;
+    joinedText.innerHTML = joined;
 
-    adviceNumber2.innerHTML = id2;
-    adviceTxt2.innerHTML = advice2;
-
-    
 }
