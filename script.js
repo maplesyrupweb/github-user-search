@@ -13,6 +13,7 @@ let locationText = document.getElementById("location");
 let bioText =  document.getElementById("bio");
 let blogText = document.getElementById("blog");
 let loginText = document.getElementById("login");
+let avatarText = document.getElementById("avatar");
 
 //created_at: "2020-11-02T03:55:55Z"
 /**
@@ -34,6 +35,11 @@ let loginText = document.getElementById("login");
 } )
 
 
+/**
+ * 
+ * Check if the username
+ *  
+ */
 
 
 async function checkUserName(input) {
@@ -48,6 +54,9 @@ async function checkUserName(input) {
     if (response2.ok) {
         console.log("result:", result);
         
+        let avatar = result.avatar_url;
+        console.log("avatar url: " + avatar );
+
         let repos = result.public_repos;
         console.log ("Repos " + repos);
 
@@ -99,7 +108,7 @@ async function checkUserName(input) {
         let bio = result.bio;
         console.log("Bio: " + bio);
 
-        populateData(name,repos,followers,following,dateText,location,blog,bio,login);
+        populateData(name,repos,followers,following,dateText,location,blog,bio,login,avatar);
         
     }
 
@@ -131,7 +140,7 @@ function checkName() {
  * Get data from API and output to screen
  * 
  */
-function populateData(name,repos,followers,following,joined,location, blog,bio,login) {
+function populateData(name,repos,followers,following,joined,location, blog,bio,login,avatar) {
 
     
     nameText.innerHTML = name;
@@ -143,5 +152,6 @@ function populateData(name,repos,followers,following,joined,location, blog,bio,l
     blogText.innerHTML = blog;
     bioText.innerHTML = bio;
     loginText.innerHTML = login;
+    avatarText.innerHTML = avatar;
 
 }
