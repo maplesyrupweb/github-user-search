@@ -15,6 +15,14 @@ let blogText = document.getElementById("blog");
 let loginText = document.getElementById("login");
 let avatarText = document.getElementById("avatar");
 
+let avatarImg = document.getElementById("avatar");
+
+// document.getElementById("myImg").src = "hackanm.gif"; 
+
+
+    // result.appendChild(document.createElement('img')).src = 'catcoin.png';
+
+
 //created_at: "2020-11-02T03:55:55Z"
 /**
  *  Event listener for search button
@@ -152,6 +160,12 @@ function populateData(name,repos,followers,following,joined,location, blog,bio,l
     blogText.innerHTML = blog;
     bioText.innerHTML = bio;
     loginText.innerHTML = login;
-    avatarText.innerHTML = avatar;
+    
+    avatarImg.src = avatar;
+
+    console.log("avatarImg " + avatarImg);
+
+
+    // result.appendChild(document.createElement('img')).src = 'catcoin.png';
 
 }
