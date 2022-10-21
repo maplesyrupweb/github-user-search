@@ -171,7 +171,7 @@ function populateData(name,repos,followers,following,joined,location, blog,bio,l
 }
 
 /**
- *  Change the backgroud color, text color, and text on mouse click
+ *  Change the backgroud color, text color, and text and icon on mouse click
  */
 
 function toggleDarkLight() {
@@ -186,5 +186,16 @@ function toggleDarkLight() {
     else {
         swapText.innerHTML = "Dark mode";
     }
+    
 
-  } 
+    var swapImage = document.getElementById("dark-mode-img");
+
+    if (swapImage.src == "http://127.0.0.1:5500/assets/icon-moon.svg"){
+        swapImage.src = "http://127.0.0.1:5500/assets/icon-sun.svg";
+    } else {
+        swapImage.src = "http://127.0.0.1:5500/assets/icon-moon.svg";   
+    }
+    
+}
+
+  
