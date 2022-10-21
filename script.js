@@ -170,7 +170,21 @@ function populateData(name,repos,followers,following,joined,location, blog,bio,l
 
 }
 
+/**
+ *  Change the backgroud color, text color, and text on mouse click
+ */
+
 function toggleDarkLight() {
+    
     var element = document.body;
     element.classList.toggle("dark-mode");
+
+    var swapText = document.getElementById("dark-mode");
+    if (swapText.innerHTML === "Dark mode") {
+        swapText.innerHTML = "Light mode";
+        }
+    else {
+        swapText.innerHTML = "Dark mode";
+    }
+
   } 
