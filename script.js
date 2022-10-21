@@ -169,3 +169,8 @@ function populateData(name,repos,followers,following,joined,location, blog,bio,l
     // result.appendChild(document.createElement('img')).src = 'catcoin.png';
 
 }
+
+function toggleDarkLight() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+  } 

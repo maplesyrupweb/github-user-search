@@ -1,7 +1,16 @@
 body{
-    background-color: #ffcc00;
+    background-color: white;
+    color: black;
+
+
 }
 
 img {
     max-width: 100px !important;
 }
+
+
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
