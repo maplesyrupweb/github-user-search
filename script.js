@@ -3,7 +3,6 @@
 const searchButton = document.getElementById("searchButton");
 let formInput = document.getElementById("search");
 let textField = document.getElementById('search');
-
 let nameText = document.getElementById("name");
 let reposText = document.getElementById("repos");
 let followersText = document.getElementById("followers");
@@ -14,16 +13,9 @@ let bioText =  document.getElementById("bio");
 let blogText = document.getElementById("blog");
 let loginText = document.getElementById("login");
 let avatarText = document.getElementById("avatar");
-
 let avatarImg = document.getElementById("avatar");
+let userNotFoundText = document.getElementById("textError");
 
-// document.getElementById("myImg").src = "hackanm.gif"; 
-
-
-    // result.appendChild(document.createElement('img')).src = 'catcoin.png';
-
-
-//created_at: "2020-11-02T03:55:55Z"
 /**
  *  Event listener for search button
  */
@@ -118,6 +110,11 @@ async function checkUserName(input) {
 
         populateData(name,repos,followers,following,dateText,location,blog,bio,login,avatar);
         
+    }
+
+    if (!response2.ok) {
+        console.log("User not found")
+        userNotFoundText.innerHTML = "User not found";
     }
 
     } catch (error) {
