@@ -113,7 +113,7 @@ async function checkUserName(input) {
         let bio = result.bio;
         
         if ((bio == null) || (bio == "")) {
-            bio = "N/A";
+            bio = "This profile has no bio";
         }
         console.log("Bio: " + bio);
 
