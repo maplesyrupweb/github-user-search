@@ -36,9 +36,7 @@ let userNotFoundText = document.getElementById("textError");
 
 
 /**
- * 
- * Check if the username
- *  
+ * Check if the username exists 
  */
 
 
@@ -54,8 +52,11 @@ async function checkUserName(input) {
     if (response2.ok) {
         console.log("result:", result);
         
+        // let avatar = result.avatar_url;
         let avatar = result.avatar_url;
-        console.log("avatar url: " + avatar );
+        
+        
+        console.log("avatar url: " + avatar);
 
         let repos = result.public_repos;
         console.log ("Repos " + repos);
@@ -67,27 +68,31 @@ async function checkUserName(input) {
         console.log("Following: " + following);
 
         let name = result.name;
+        if (name == null) {
+            name = "N/A"
+        }
         console.log("Name: " + name);
 
         let login = result.login;
         console.log("Login: " + login);
 
         let blog = result.blog;
+        if ((blog == null) || (blog == "")) {
+            blog = "N/A"
+        }
         console.log("Blog: " + blog);
 
         let location = result.location;
-        // let boolean = result.location === null
-        // console.log("Location boolean " + result.location === "null")
-        if (result.location === null) {
+        if ((location == null) || (location == "")) {
             location = "N/A";
         }
-        console.log("Location: " + location);
-
-        let website = result.website;
-        console.log("Website: " + website);
-
+        console.log("location " + location);
+        
         let twitter = result.twitter_username;
-        console.log("Twitter:" + twitter)
+        if (twitter == null) {
+            twitter = "N/A";
+        }
+        console.log("Twitter: " + twitter)
 
         let joined = result.created_at;
         let joinedDate = new Date(joined);
@@ -106,6 +111,10 @@ async function checkUserName(input) {
         console.log("Joined: " + dateText);
         
         let bio = result.bio;
+        
+        if ((bio == null) || (bio == "")) {
+            bio = "N/A";
+        }
         console.log("Bio: " + bio);
 
         populateData(name,repos,followers,following,dateText,location,blog,bio,login,avatar);
