@@ -1,8 +1,16 @@
+:root {
+ --dark-background:  #2B3442;
+ --dark: #1E2A47;
+ --dark2: #141D2F;
+
+ --white-background: #fff;
+ --button:0079FF;
+ --button2: 60ABFF;
+}
+
 body{
-    background-color: white;
+    background-color: var(--white-background);
     color: black;
-
-
 }
 
 img {
@@ -11,6 +19,12 @@ img {
 
 
   .dark-mode {
-    background-color: black;
+    background-color: var(--dark-background);
     color: white;
   }
+
+  .btn {
+    color: var(--button);
+  }
+
+  
