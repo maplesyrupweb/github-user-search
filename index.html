@@ -34,17 +34,20 @@
     <p id="dark-mode">Dark mode</p>
     <div class="mb-3">
       <form class="row g-3 needs-validation" novalidate>
-
-      <label for="" class="form-label">Name</label>
-      <input type="text"
+      
+    
+    
+    <!-- search box and button on same row -->
+    <div class="input-group mb-3">
+        <input type="text"
         class="form-control" name="search" id="search" aria-describedby="helpId" placeholder="Search GitHub username...">
         <!-- <p class="form__info__errors" id="textError"></p> -->
         <small id="textError" class="form-text text-danger"></small>
-    
-
-    <div class="d-grid gap-2">
-      <button type="button" name="searchButton" id="searchButton" class="btn btn-primary">Button</button>
+      <div class="input-group-append">
+        <button class="btn btn-primary" name="searchButton" id="searchButton" type="button">Button</button>
+      </div>
     </div>
+    
 
     <div class="searchResults">
 
