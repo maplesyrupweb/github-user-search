@@ -15,6 +15,8 @@ let loginText = document.getElementById("login");
 let avatarText = document.getElementById("avatar");
 let avatarImg = document.getElementById("avatar");
 let userNotFoundText = document.getElementById("textError");
+let twitterText = document.getElementById("twitter");
+let companyText = document.getElementById("company");
 
 /**
  *  Event listener for search button
@@ -93,6 +95,12 @@ async function checkUserName(input) {
             twitter = "N/A";
         }
         console.log("Twitter: " + twitter)
+
+        let company = result.company;
+        if ((company == null) || (company == undefined) || (company == "")) {
+            company = "N/A";
+        }
+        console.log ("Company: " + company);
 
         let joined = result.created_at;
         let joinedDate = new Date(joined);
