@@ -2,6 +2,9 @@
  --dark-background:  #2B3442;
  --dark: #1E2A47;
  --dark2: #141D2F;
+ --grey: #90A4D4;
+ --grey2: #979797;
+ --white2: #F6F8FF;
 
  --white-background: #fff;
  --button:0079FF;
@@ -23,8 +26,16 @@ img {
   color: white;
 }
 
+.dark-mode .section-container{
+  background-color: var(--dark);
+}
+
+
 .btn {
   color: var(--button);
 }
 
 
+.section-container {
+  background-color: var(--white2);
+}
