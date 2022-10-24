@@ -42,30 +42,33 @@
         <input type="text"
         class="form-control" name="search" id="search" aria-describedby="helpId" placeholder="Search GitHub username...">
         <!-- <p class="form__info__errors" id="textError"></p> -->
-        <small id="textError" class="form-text text-danger"></small>
       <div class="input-group-append">
         <button class="btn btn-primary" name="searchButton" id="searchButton" type="button">Button</button>
       </div>
     </div>
-    
+    <small id="textError" class="form-text text-danger"></small>
 
     <div class="searchResults">
 
-      <div class="row">
-        <p class="Name">Name <span id="name"></span></p>
-        <p class="Login">Login <span id="login"></span></p>
-        <!-- <p class="Name">Avatar <span id="avatar"></span></p> -->
-        <img class="" src="" id="avatar">
-        
-        <!-- <img src="https://vancouver.citynews.ca/static/media/CityNews_Everywhere_Blue.c35e37f8.svg" id="avatar">
-         -->
+      <!-- First row -->
+      <div class="row mb-3">
+        <div class="col-md-2">
+          <img class="" src="" id="avatar">
+        </div>
+        <div class="col-md-5">
+          <h3 class=""><span class="" id="name"></span></h3>
+          <p class=""><span id="login"></span></p>
+        </div>
+        <div class="col-md-5">
+          <h4 class=""><span id="joined"></span></h4>  
+        </div>
       </div>
 
       <div class="row">
         <p class="Repos">Repos <span id="repos"></span></p>
         <p class="Followers">Followers <span id="followers"></span></p>
         <p class="Following">Following <span id="following"></span></p>
-        <p class="Joined">Joined <span id="joined"></span></p>
+        
         <p class="Location">Location <span id="location"></span></p>
         <p class="Bio">Bio <span id="bio"></span></p>
         <p class="Blog">Website <span id="blog"></span></p>
@@ -73,7 +76,7 @@
 
     </div>
 
-    
+  
 
     </div>
   

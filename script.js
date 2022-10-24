@@ -105,10 +105,10 @@ async function checkUserName(input) {
 
         let monthText = month.toLocaleString('default', { month: 'long' });
 
-        let dateText = day + " " + monthText + " " + year;
+        let dateText = "Joined: " + day + " " + monthText + " " + year;
         
-        console.log("Joined date " + joinedDate);
-        console.log("Joined: " + dateText);
+        // console.log("Joined date " + joinedDate);
+        // console.log("Joined: " + dateText);
         
         let bio = result.bio;
         

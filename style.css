@@ -18,13 +18,13 @@ img {
 }
 
 
-  .dark-mode {
-    background-color: var(--dark-background);
-    color: white;
-  }
+.dark-mode {
+  background-color: var(--dark-background);
+  color: white;
+}
 
-  .btn {
-    color: var(--button);
-  }
+.btn {
+  color: var(--button);
+}
 
-  
+
