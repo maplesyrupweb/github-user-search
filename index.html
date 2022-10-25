@@ -25,13 +25,16 @@
     
     
   
-  
-  <div class="container">
-    <h3>devfinder</h3>
+    <div class="container">
+    <!-- <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center"> -->
+    <h3 class="">devfinder</h3>
 
-    <button onclick="toggleDarkLight()">Toggle dark/light mode</button>
-    <img src="assets/icon-moon.svg" id="dark-mode-img">
-    <p id="dark-mode">Dark mode</p>
+    <div class="d-flex align-items-end flex-column" onclick="toggleDarkLight()">
+      <p>
+        <img src="assets/icon-moon.svg"  id="dark-mode-img">
+        <span id="dark-mode">Dark mode</span>
+      </p>
+    </div>
     <div class="mb-3">
       <form class="row g-3 needs-validation" novalidate>
       
@@ -40,8 +43,8 @@
     <!-- search box and button on same row -->
     <div class="input-group mb-3">
         <input type="text"
-        class="form-control" name="search" id="search" aria-describedby="helpId" placeholder="Search GitHub username...">
-        <!-- <p class="form__info__errors" id="textError"></p> -->
+        class="form-control" name="search" id="search" aria-describedby="helpId" placeholder="Search GitHub username..." required>
+        
       <div class="input-group-append">
         <button class="btn btn-primary" name="searchButton" id="searchButton" type="button">Button</button>
       </div>
@@ -83,21 +86,25 @@
       <div class="row">
         <div class="col">
           <img src="assets/icon-location.svg">
-          <p class="Location">Location <span id="location"></span></p>
+          <p class="Location"><span id="location"></span></p>
         </div>
         <div class="col">
           <img src="assets/icon-twitter.svg">
-          <p class="">Twitter <span id="twitter"></span></p>
+          <p class=""><span id="twitter"></span></p>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <img src="assets/icon-website.svg">
-          <p class="Blog">Website <span id="blog"></span></p>  
+          
+        
+            <img class="" src="assets/icon-website.svg">
+            <p class="Blog"> <span id="blog"></span></p>    
+          
+          
         </div>
         <div class="col">
           <img src="assets/icon-company.svg">
-          <p class="">Company <span id="company"></span></p>  
+          <p class=""><span id="company"></span></p>  
         </div>
       </div>
 

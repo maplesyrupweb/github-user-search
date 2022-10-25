@@ -39,3 +39,7 @@ img {
 .section-container {
   background-color: var(--white2);
 }
+
+.btn {
+  color: white;
+}
