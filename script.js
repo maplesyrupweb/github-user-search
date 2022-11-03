@@ -125,7 +125,7 @@ async function checkUserName(input) {
         }
         console.log("Bio: " + bio);
 
-        populateData(name,repos,followers,following,dateText,location,blog,bio,login,avatar);
+        populateData(name,repos,followers,following,dateText,location,blog,bio,login,avatar,twitter,company);
         
     }
 
@@ -162,7 +162,7 @@ function checkName() {
  * Get data from API and output to screen
  * 
  */
-function populateData(name,repos,followers,following,joined,location, blog,bio,login,avatar) {
+function populateData(name,repos,followers,following,joined,location, blog,bio,login,avatar,twitter,company) {
 
     
     nameText.innerHTML = name;
@@ -174,6 +174,8 @@ function populateData(name,repos,followers,following,joined,location, blog,bio,l
     blogText.innerHTML = blog;
     bioText.innerHTML = bio;
     loginText.innerHTML = login;
+    twitterText.innerHTML = twitter;
+    companyText.innerHTML = company;
     
     avatarImg.src = avatar;
 
@@ -204,10 +206,23 @@ function toggleDarkLight() {
 
     var swapImage = document.getElementById("dark-mode-img");
 
-    if (swapImage.src == "http://127.0.0.1:5500/assets/icon-moon.svg"){
-        swapImage.src = "http://127.0.0.1:5500/assets/icon-sun.svg";
-    } else {
-        swapImage.src = "http://127.0.0.1:5500/assets/icon-moon.svg";   
+    if (swapImage.src === "assets/icon-moon.svg"){
+        swapImage.src = "assets/icon-sun.svg";
+        console.log("From dark to light");
+    } 
+    else if 
+        (swapImage.src === "assets/icon-sun.svg"){
+            swapImage.src = "assets/icon-moon.svg";
+            console.log("From light to dark");
+        }
+        
+    
+    
+    else
+    
+    {
+        swapImage.src = "assets/icon-sun.svg";   
+        console.log("Default");
     }
     
 }
